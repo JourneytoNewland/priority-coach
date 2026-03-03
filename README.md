@@ -67,17 +67,21 @@ priority-coach/
 ├── README.md                   # 使用指南
 ├── examples.md                 # 8个典型使用场景
 │
-├── references/                 # 参考资料（4个）
+├── references/                 # 参考资料（5个）
 │   ├── eisenhower-matrix.md   # 艾森豪威尔矩阵
 │   ├── p-persona-guide.md      # P人行为模式
 │   ├── pomodoro-technique.md   # 番茄工作法
-│   └── biotime-matching.md     # 生物钟匹配
+│   ├── biotime-matching.md     # 生物钟匹配
+│   └── self-evolution.md       # 自我进化机制 ⭐
 │
-└── scripts/                    # 核心脚本（4个）
-    ├── calculate_value_score.py      # 价值评分算法
-    ├── analyze_escape_patterns.py    # 逃避模式分析
-    ├── daily_review.py               # 每日复盘生成
-    └── generate_weekly_report.py     # 绩效周报生成
+├── scripts/                    # 核心脚本（5个）
+│   ├── calculate_value_score.py      # 价值评分算法
+│   ├── analyze_escape_patterns.py    # 逃避模式分析
+│   ├── daily_review.py               # 每日复盘生成
+│   ├── generate_weekly_report.py     # 绩效周报生成
+│   └── self_evolution.py             # 自我进化引擎 ⭐
+│
+└── ROADMAP.md                  # 优化路线图 🚀
 ```
 
 ---
@@ -117,6 +121,15 @@ priority-coach/
 - 跨设备同步
 - 在Claude UI中实时更新
 
+### 6. 自我进化系统 ⭐ **v1.2新增**
+
+- **数据收集层** - 记录决策模式、完成率、时间准确度
+- **模式学习层** - 识别决策风格、精力模式、任务偏好
+- **算法优化层** - 自动调优参数、A/B测试、时间校准
+- **进化报告** - 展示学习进度和性能提升
+
+**效果：** 使用越久，越懂你！🤖
+
 ---
 
 ## 📊 效果
@@ -133,7 +146,9 @@ priority-coach/
 - **[SKILL.md](skills/priority-coach/SKILL.md)** - 核心技能文档（Claude读取）
 - **[README.md](skills/priority-coach/README.md)** - 使用指南
 - **[examples.md](skills/priority-coach/examples.md)** - 8个使用示例
+- **[ROADMAP.md](skills/priority-coach/ROADMAP.md)** - 优化路线图 🚀
 - **[CHANGELOG.md](CHANGELOG.md)** - 版本变更历史
+- **[references/self-evolution.md](skills/priority-coach/references/self-evolution.md)** - 自我进化机制详解
 
 ---
 
@@ -184,17 +199,29 @@ priority-coach 本周总结
 
 ## 🚧 开发路线图
 
-### v1.3 (计划中)
-- [ ] 日历系统集成
-- [ ] 番茄钟Timer联动
-- [ ] 可视化分析面板
-- [ ] 团队协作任务识别
+**完整的优化计划详见：** [ROADMAP.md](skills/priority-coach/ROADMAP.md) 🚀
 
-### v2.0 (未来)
-- [ ] 多用户支持
-- [ ] Web仪表盘
-- [ ] 高级分析功能
-- [ ] 更多工具集成
+### 快速预览
+
+**v1.3 (1-2周)** - 体验优化
+- ⭐ 时间估算算法升级
+- ⭐ 任务难度评分系统
+- ⭐ 快速命令（pc 规划/复盘/周报）
+- ⭐ 情绪状态追踪
+
+**v1.4-v1.5 (1-2月)** - 智能增强
+- ⭐ 任务依赖关系图
+- ⭐ 上下文感知调度
+- ⭐ 多目标平衡
+- 🤖 LLM语义增强
+
+**v2.0+ (3月+)** - 完全个性化
+- ⭐ 预测性任务推荐
+- ⭐ 习惯追踪与养成
+- ⭐ 团队协作模式
+- 🤖 完全LLM化（可选）
+
+**特别计划：** LLM增强方案详见 [ROADMAP.md#llm增强方案](skills/priority-coach/ROADMAP.md#llm增强方案-特别计划)
 
 ---
 

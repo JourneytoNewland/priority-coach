@@ -15,6 +15,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Daily Review Generation** - Automated daily analysis with optimization suggestions
 - **Weekly Performance Reports** - Weekly achievement review and next week suggestions
 - **Time Estimation Auto-Calibration** - Learns user's time estimation patterns over time
+- **Self-Evolution System** 🤖 - Learns user behavior and optimizes algorithms automatically
+  - Data collection layer - Records decision patterns, completion rates, time accuracy
+  - Pattern learning layer - Identifies decision style, energy patterns, task preferences
+  - Algorithm optimization layer - Auto-tunes parameters, runs A/B tests, calibrates time estimation
+  - Evolution report - Shows learning progress and performance improvements
+- **ROADMAP.md** - Comprehensive optimization roadmap with LLM enhancement plans
 
 ### Changed
 - Improved SKILL.md with quick start section at the top
