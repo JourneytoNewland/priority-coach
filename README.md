@@ -1,22 +1,25 @@
-# Priority Coach - AI优先级教练
+# CreateSkills - Claude Code Skills 集合
 
-> 专为感知型人格(P人)设计的Claude Code Skill，通过脑部清理、目标对齐和时间保护三大机制，将零散任务转化为结构化的行动计划。效率提升5-10倍。
+> **首个发布：Priority Coach v1.2.0** - 专为感知型人格设计的AI优先级教练
 
-[![Version](https://img.shields.io/badge/version-1.2.0-blue.svg)](skills/priority-coach/SKILL.md)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-purple.svg)]()
+[![Claude Code](https://img.shields.io/badge/Claude_Code-Skills-purple.svg)]()
 
 ---
 
 ## 🎯 这是什么？
 
-**Priority Coach** 是一个Claude Code Skill（技能），帮助用户：
+**CreateSkills** 是一个 Claude Code Skills 集合项目，旨在创建高质量、实用的 AI 助手技能。
+
+### 首个发布：Priority Coach ⭐
+
+**Priority Coach** 是专为感知型人格（P人）设计的AI优先级教练，通过脑部清理、目标对齐和时间保护三大机制，将零散任务转化为结构化的行动计划。效率提升5-10倍。
 
 - ✅ 整理零散想法 → 优先级清单
 - ✅ 基于长期目标进行价值评分（1-5分）
 - ✅ 生成符合生物钟的时间表
 - ✅ 每日复盘和周度回顾
-- ✅ 学习并优化你的工作模式
+- ✅ 学习并优化你的工作模式（自我进化系统 🤖）
 
 **适用人群：** 感知型人格（P人）、容易分心、任务爆炸的人
 
@@ -24,18 +27,18 @@
 
 ## 🚀 快速开始
 
-### 安装
+### 安装 Priority Coach
 
 ```bash
-# 克隆或下载此项目
-git clone <repository-url>
+# 克隆本仓库
+git clone https://github.com/JourneytoNewland/priority-coach.git
 cd createSkills
 
-# Skill位于
+# Priority Coach 位于
 skills/priority-coach/
 ```
 
-### 使用
+### 使用 Priority Coach
 
 1. **首次使用** - 初始化目标
 ```
@@ -57,32 +60,47 @@ priority-coach 今日总结
 priority-coach 本周总结
 ```
 
+5. **查看进化报告** - 了解学习进度 ⭐
+```
+priority-coach 进化报告
+```
+
 ---
 
 ## 📂 项目结构
 
 ```
-priority-coach/
-├── SKILL.md                    # 核心技能文档（Claude读取）
-├── README.md                   # 使用指南
-├── examples.md                 # 8个典型使用场景
+createSkills/                      # Skills 集合项目根目录
+├── README.md                      # 项目总览（本文件）
+├── LICENSE                        # MIT 许可证
+├── CHANGELOG.md                   # 总体版本历史
 │
-├── references/                 # 参考资料（5个）
-│   ├── eisenhower-matrix.md   # 艾森豪威尔矩阵
-│   ├── p-persona-guide.md      # P人行为模式
-│   ├── pomodoro-technique.md   # 番茄工作法
-│   ├── biotime-matching.md     # 生物钟匹配
-│   └── self-evolution.md       # 自我进化机制 ⭐
-│
-├── scripts/                    # 核心脚本（5个）
-│   ├── calculate_value_score.py      # 价值评分算法
-│   ├── analyze_escape_patterns.py    # 逃避模式分析
-│   ├── daily_review.py               # 每日复盘生成
-│   ├── generate_weekly_report.py     # 绩效周报生成
-│   └── self_evolution.py             # 自我进化引擎 ⭐
-│
-└── ROADMAP.md                  # 优化路线图 🚀
+└── skills/                        # Skills 目录
+    └── priority-coach/            # 🎯 首个发布：Priority Coach
+        ├── SKILL.md              # 核心技能文档（Claude读取）
+        ├── README.md             # Priority Coach 使用指南
+        ├── examples.md           # 8个典型使用场景
+        ├── ROADMAP.md            # 优化路线图 🚀
+        │
+        ├── references/           # 参考资料（5个）
+        │   ├── eisenhower-matrix.md
+        │   ├── p-persona-guide.md
+        │   ├── pomodoro-technique.md
+        │   ├── biotime-matching.md
+        │   └── self-evolution.md
+        │
+        ├── scripts/              # 核心脚本（5个）
+        │   ├── calculate_value_score.py
+        │   ├── analyze_escape_patterns.py
+        │   ├── daily_review.py
+        │   ├── generate_weekly_report.py
+        │   └── self_evolution.py
+        │
+        └── tests/                # 测试套件
+            └── test_v1.2.py
 ```
+
+**注意：** 目前本仓库只包含 Priority Coach。未来计划添加更多实用 Skills。
 
 ---
 
