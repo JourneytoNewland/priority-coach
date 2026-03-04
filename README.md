@@ -27,16 +27,89 @@
 
 ## 🚀 快速开始
 
-### 安装 Priority Coach
+### ⚙️ 如何让 Claude Code 使用这个 Skill
+
+**重要：** Claude Code 需要将 Skill 文件放在特定位置才能识别和使用。
+
+#### Step 1: 理解目录结构
+
+Claude Code 使用两个不同的目录：
+
+**1. Skill 安装目录**（你手动创建）：
+```
+~/.claude/skills/priority-coach/
+└── SKILL.md  # 核心 Skill 文件
+```
+
+**2. 数据存储目录**（自动创建）：
+```
+~/.claude/priority-coach/
+├── user_goals.json    # 用户长期目标
+├── daily_plans/       # 每日计划
+├── weekly_reports/    # 周报
+└── analytics/         # 分析数据
+```
+
+**注意：** `~/.claude/priority-coach/` 是数据目录，不是 skill 安装目录！
+
+#### Step 2: 安装 Priority Coach Skill
+
+**方法一：直接复制（推荐）**
+
+```bash
+# 1. 创建 skill 目录
+mkdir -p ~/.claude/skills/priority-coach
+
+# 2. 复制核心 SKILL.md 文件
+cp skills/priority-coach/SKILL.md ~/.claude/skills/priority-coach/
+
+# 3. （可选）复制参考资料，以便 Skill 可以引用
+mkdir -p ~/.claude/skills/priority-coach/references
+cp -r skills/priority-coach/references/* ~/.claude/skills/priority-coach/references/
+```
+
+**方法二：创建符号链接（开发者）**
+
+```bash
+# 如果你克隆了本仓库
+ln -s $(pwd)/skills/priority-coach ~/.claude/skills/priority-coach
+```
+
+#### Step 3: 验证安装
+
+在 Claude Code 中尝试：
+
+```bash
+priority-coach 帮我规划今天
+```
+
+如果成功，你会看到规划输出！✅
+
+**验证命令：**
+```bash
+# 检查 skill 是否安装成功
+ls ~/.claude/skills/priority-coach/SKILL.md
+
+# 查看数据目录（首次使用后会自动创建）
+ls ~/.claude/priority-coach/
+```
+
+---
+
+### 📦 克隆完整仓库（可选）
+
+如果你想查看完整文档、示例和测试套件：
 
 ```bash
 # 克隆本仓库
 git clone https://github.com/JourneytoNewland/priority-coach.git
 cd createSkills
 
-# Priority Coach 位于
+# Priority Coach 源文件位于
 skills/priority-coach/
 ```
+
+**注意：** 运行 Skill 只需要 `SKILL.md`，其他文件是参考和开发用的。
 
 ### 使用 Priority Coach
 
@@ -261,6 +334,135 @@ priority-coach 本周总结
 - Eisenhower Matrix - 优先级管理框架
 - Pomodoro Technique - 时间管理方法
 - 所有测试用户提供反馈
+
+---
+
+## ❓ 常见问题 (FAQ)
+
+### Q1: Skill 放在哪个目录？
+
+**A:** Skill 安装目录是：`~/.claude/skills/`
+
+**目录结构：**
+```
+~/.claude/
+├── skills/                    # Skill 安装目录（手动安装）
+│   └── priority-coach/
+│       └── SKILL.md
+└── priority-coach/            # 数据存储目录（自动创建）
+    ├── user_goals.json
+    ├── daily_plans/
+    └── analytics/
+```
+
+**验证命令：**
+```bash
+# 查看已安装的 skills
+ls ~/.claude/skills/
+
+# 查看 Priority Coach 数据
+ls ~/.claude/priority-coach/
+```
+
+### Q2: 为什么 Skill 没有被识别？
+
+**检查清单：**
+1. ✅ 文件名必须是 `SKILL.md`（大写）
+2. ✅ 必须包含 YAML frontmatter（`---` 包围的部分）
+3. ✅ `user-invocable: true` 必须设置
+4. ✅ 文件路径必须是：`~/.claude/skills/priority-coach/SKILL.md`
+
+**验证 SKILL.md 格式：**
+```bash
+# 检查前几行
+head -10 ~/.claude/skills/priority-coach/SKILL.md
+```
+
+应该看到：
+```yaml
+---
+name: priority-coach
+description: "..."
+user-invocable: true
+---
+```
+
+### Q3: `~/.claude/priority-coach/` 是什么？
+
+**A:** 这是**数据存储目录**，不是 skill 安装目录！
+
+- **Skill 安装目录**：`~/.claude/skills/priority-coach/`（存放 SKILL.md）
+- **数据存储目录**：`~/.claude/priority-coach/`（存放用户目标、计划等，**首次使用时自动创建**）
+
+**常见误解：** ❌ 不要把 SKILL.md 放在 `~/.claude/priority-coach/` 里！
+
+### Q4: references/ 目录需要复制吗？
+
+**A:** 可选，但推荐。
+
+**原因：** SKILL.md 中会引用这些文档（如 `references/eisenhower-matrix.md`），复制后 Claude 可以读取。
+
+**最小安装：**
+```bash
+mkdir -p ~/.claude/skills/priority-coach
+cp skills/priority-coach/SKILL.md ~/.claude/skills/priority-coach/
+```
+
+**推荐安装：**
+```bash
+mkdir -p ~/.claude/skills/priority-coach/references
+cp skills/priority-coach/SKILL.md ~/.claude/skills/priority-coach/
+cp -r skills/priority-coach/references/* ~/.claude/skills/priority-coach/references/
+```
+
+### Q5: 如何更新 Skill？
+
+**A:** 覆盖 SKILL.md 文件：
+
+```bash
+# 从新版本复制
+cp skills/priority-coach/SKILL.md ~/.claude/skills/priority-coach/
+
+# Claude Code 会自动重新加载
+```
+
+### Q6: 可以自定义 Skill 吗？
+
+**A:** 可以！直接编辑已安装的 SKILL.md：
+
+```bash
+# 编辑已安装的版本
+nano ~/.claude/skills/priority-coach/SKILL.md
+
+# 或编辑源文件后重新复制
+cp skills/priority-coach/SKILL.md ~/.claude/skills/priority-coach/
+```
+
+### Q7: 如何卸载 Skill？
+
+**A:** 删除 skill 目录：
+
+```bash
+# 删除 Skill
+rm -rf ~/.claude/skills/priority-coach
+
+# 注意：数据目录 ~/.claude/priority-coach/ 会被保留
+# 如需删除数据：rm -rf ~/.claude/priority-coach/
+```
+
+### Q8: 仓库克隆到哪里？
+
+**A:** 任意位置！Skill 安装和数据存储是独立的。
+
+**示例：**
+```bash
+# 克隆到你的项目目录
+cd ~/Projects
+git clone https://github.com/JourneytoNewland/priority-coach.git createSkills
+
+# 安装 Skill（复制到 Claude 目录）
+cp -r createSkills/skills/priority-coach ~/.claude/skills/
+```
 
 ---
 
